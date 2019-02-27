@@ -1,6 +1,6 @@
 ﻿# ULTRAVIOLET SENSE
 
-🐱‍🏍 _Este sentido te permite tener una percepción de la catidad de rayos UV que contiene la luz del sol._
+🐱‍🏍_Este sentido te permite tener una percepción de la catidad de rayos UV que contiene la luz del sol._
 
 ## Arduino
 
