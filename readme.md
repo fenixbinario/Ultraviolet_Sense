@@ -4,15 +4,16 @@ _Este sentido te permite tener una percepción de la catidad de rayos UV que con
 
 ## REQUISITOS
 
-### SOFTWARE
-* Tener instalado `ATTinyCore` by Spence Konde Version [Más INFO](https://github.com/SpenceKonde/ATTinyCore).
+### Software
+* Tener instalado `ATTinyCore` by Spence Konde [Más INFO](https://github.com/SpenceKonde/ATTinyCore).
 
-### HARDWARE
-* Atiny85 | Attiny45
-* Sensor UV 
+### Hardware
+* Atiny85 | Attiny45.
+* Sensor UV.
 
 ## CODIGO
 
+### *Pasos*
 * Para desplegar y construir por ti mismo este órgano y sentido sigue **Desplequegar**.
 * Sigue cada unos de los pasos.
 * Que hardware necesitas?
