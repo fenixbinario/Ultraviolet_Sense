@@ -1,6 +1,10 @@
-﻿# ULTRAVIOLET SENSE
+﻿# ULTRAVIOLET SENSE 
 
 _Este sentido te permite tener una percepción de la catidad de rayos UV que contiene la luz del sol._
+
+## REQUISITOS
+* Tener instalado `ATTinyCore` by Spence Konde Version [Más INFO](https://github.com/SpenceKonde/ATTinyCore).
+* 
 
 ## Arduino
 
@@ -11,6 +15,7 @@ _Este sentido te permite tener una percepción de la catidad de rayos UV que con
 _Descripción del codigo de arduino_
 
 ``` c++
+
 #include <TinyWireM>
 #include <Ultraviolet_Sense>
 
