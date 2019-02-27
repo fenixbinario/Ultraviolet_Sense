@@ -2,6 +2,7 @@
  Name:		Ultraviolet_Sense.ino
  Created:	27/02/2019 16:04:00
  Author:	@fenixbinario | www.fenixbinario.com
+ Hardware: Attiny85 
 */
 
 // the setup function runs once when you press reset or power the board
