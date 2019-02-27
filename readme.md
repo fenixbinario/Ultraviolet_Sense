@@ -5,9 +5,14 @@ en
 **Desplequegar**
 en
 en
-##Arduino
+## Arduino
+en
 en
 ``` c++
+#include <TinyWireM>
+#include <Ultraviolet_Sense>
+en
 Ultraviolet newSense;
+en
 ```
 
