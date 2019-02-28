@@ -1,6 +1,7 @@
 /*
-UV index explanation: http://www2.epa.gov/sunwise/uv-index-scale
- UV index explanation: http://www.epa.gov/sunwise/doc/what_is_uvindex.html
+UV index explanation:	http://www2.epa.gov/sunwise/uv-index-scale
+UV index explanation:	http://www.epa.gov/sunwise/doc/what_is_uvindex.html
+RGB colours:			https://howtomechatronics.com/tutorials/arduino/how-to-use-a-rgb-led-with-arduino/
  Name:		Ultraviolet_Sense.ino
  Created:	27/02/2019 16:04:00
  Author:	@fenixbinario | www.fenixbinario.com
@@ -21,27 +22,42 @@ PB0 Pin0 PWM
 
 */
 
+enum  colours : int
+{
+	green = 0,
+	yellow = 1,
+	orange = 2,
+	red = 3,
+	purple = 4,
+	none = 5
+};
+
+colours color;
+
 
 // Global 
 float Vsig = -1;
 int	Vibrator = -1;
 int UV_Analog = ADC1D;
 int PWM_Pin = PCINT0;
-int red = PCINT5;
-int green = PCINT3;
-int blue = PCINT4;
+int redPin = PCINT5;
+int greenPin = PCINT3;
+int bluePin = PCINT4;
 int time = 0;
-// Fuction Prototyp3e
-void Color(int, int, int); // UV Index Scale Universal
+
+// Fuction Prototype
+void setColor(int, int, int);
+void Colour(void); // UV Index Scale Universal
+void Vibration(int); //void Vibration(int); // Motor Vibration
 
 void setup()
 {
-	pinMode(red, OUTPUT);
-	pinMode(green, OUTPUT);
-	pinMode(blue, OUTPUT);
+	pinMode(UV_Analog, INPUT);
+	pinMode(redPin, OUTPUT);
+	pinMode(greenPin, OUTPUT);
+	pinMode(bluePin, OUTPUT);
 	pinMode(PWM_Pin, OUTPUT);
 }
-
 
 void loop()
 {
@@ -60,64 +76,79 @@ void loop()
 
 	if (Vsig < 50) 
 	{
-		digitalWrite(PWM_Pin, Vibrator);
-		delay(time);
+		color = none;
 	}
 	if (Vsig > 50 && Vsig < 227) // UV Index 1 | Exposure level - LOW  green
-	{ 
-		digitalWrite(PWM_Pin, Vibrator);
-		delay(time);
+	{	
+		color = green;
 	}
 	if (Vsig > 227 && Vsig < 318) { // UV Index: 2  Exposure level - LOW    green
-		digitalWrite(PWM_Pin, Vibrator);
-		delay(time);
+		color = green;
 	}
 	if (Vsig > 318 && Vsig < 408) {// UV Index: 3  Exposure level - MODERATE  yellow
-		digitalWrite(PWM_Pin, Vibrator);
-		delay(time);
+		color = yellow;
 	}
 	if (Vsig > 408 && Vsig < 503) {  //UV Index: 4   Exposure level - MODERATE  yellow
-		digitalWrite(PWM_Pin, Vibrator);
-		delay(time);
+		color = yellow;
 	}
 	if (Vsig > 503 && Vsig < 606) {	// UV Index: 5   Exposure level - MODERATE    yellow
-		digitalWrite(PWM_Pin, Vibrator);
-		delay(time);
+		color = yellow;
 	}
 	if (Vsig > 606 && Vsig < 696) { // UV Index: 6 Exposure level - HIGH  orange
-		digitalWrite(PWM_Pin, Vibrator);
-		delay(time);
+		color = orange;
 	}
 	if (Vsig > 696 && Vsig < 795) { // UV Index: 7    Exposure level - HIGH   orange
-		digitalWrite(PWM_Pin, Vibrator);
-		delay(time);
+		color = orange;
 	}
 	if (Vsig > 795 && Vsig < 881) {	//  UV Index: 8    Exposure level - VERY HIGH   red
-		digitalWrite(PWM_Pin, Vibrator);
-		delay(time);
+		color = orange;
 	}
 	if (Vsig > 881 && Vsig < 976) {	//	UV Index: 9    Exposure level - VERY HIGH   red
-		digitalWrite(PWM_Pin, Vibrator);
-		delay(time);
+		color = red;
 	}
 	if (Vsig > 976 && Vsig < 1079) {	//	UV Index: 10    Exposure level - VERY HIGH   red
-		digitalWrite(PWM_Pin, Vibrator);
-		delay(time);
+		color = red;
+		Vibration(Vibrator);
 	}
 	if (Vsig > 1079 && Vsig < 1170) {	//	UV Index: 11	   Exposure level - EXTREME   purple
-		digitalWrite(PWM_Pin, Vibrator);
-		delay(time);
+		color = purple;;
 	}
-	if (Vsig > 1170) {		//	UV Index: 11+    Exposure level - EXTREME   purple
-		digitalWrite(PWM_Pin, Vibrator);
-		delay(time);
+	if (Vsig > 1170) {	//	UV Index: 11+    Exposure level - EXTREME   purple
+		color = purple;	
 	}
+	Vibration(Vibrator);
 }
 
 
-void Color(int _red, int _green, int _blue)
+
+void setColor(int redValue, int greenValue, int blueValue) {
+	analogWrite(redPin, redValue);
+	analogWrite(greenPin, greenValue);
+	analogWrite(bluePin, blueValue);
+}
+
+void Colour(void)
 {
-	analogWrite(red, _red);
-	analogWrite(green, _green);
-	analogWrite(blue, _blue);
+	switch (color)
+	{
+	case green:		setColor(0, 255, 0); // Green Color
+		break;
+	case yellow:	setColor(255, 255, 0); // Red Yellow
+		break;
+	case orange:	setColor(255, 170, 0); // Red Orange
+		break;
+	case red:		setColor(255, 0, 0); // Red Color
+		break;
+	case purple:	setColor(170, 0, 255); // Purple Color
+		break;
+	default:
+		break;
+	}
+}
+
+void Vibration(	int _pwm)
+{
+	digitalWrite(PWM_Pin, _pwm);
+	Colour();
+	delay(time);
 }
