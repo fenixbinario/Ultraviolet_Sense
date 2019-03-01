@@ -22,6 +22,8 @@ PB0 Pin0 PWM
 
 */
 
+#include <EasyNeoPixels.h>
+
 enum  colours : int
 {
 	green = 0,
@@ -40,10 +42,12 @@ float Vsig = -1;
 int	Vibrator = -1;
 int UV_Analog = ADC1D;
 int PWM_Pin = PCINT0;
+/*
 int redPin = PCINT5;
 int greenPin = PCINT3;
 int bluePin = PCINT4;
-int time = 0;
+*/
+int time = 500;
 
 // Fuction Prototype
 void setColor(int, int, int);
@@ -52,11 +56,18 @@ void Vibration(int); //void Vibration(int); // Motor Vibration
 
 void setup()
 {
+	// Pixel RGB
+	setupEasyNeoPixels(PCINT3, 1);
+
+	//Pin OUT
 	pinMode(UV_Analog, INPUT);
-	pinMode(redPin, OUTPUT);
+	pinMode(PWM_Pin, OUTPUT);
+
+	/*
+	PinMode(redPin, OUTPUT);
 	pinMode(greenPin, OUTPUT);
 	pinMode(bluePin, OUTPUT);
-	pinMode(PWM_Pin, OUTPUT);
+	*/
 }
 
 void loop()
@@ -122,9 +133,13 @@ void loop()
 
 
 void setColor(int redValue, int greenValue, int blueValue) {
+	
+	/*
 	analogWrite(redPin, redValue);
 	analogWrite(greenPin, greenValue);
 	analogWrite(bluePin, blueValue);
+	*/
+	writeEasyNeoPixel(0, redValue, greenValue, blueValue);
 }
 
 void Colour(void)
