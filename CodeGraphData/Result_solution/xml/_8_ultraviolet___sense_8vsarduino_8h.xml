@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="_8_ultraviolet___sense_8vsarduino_8h" kind="file">
+    <compoundname>.Ultraviolet_Sense.vsarduino.h</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/></highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>Editor:<sp/>https://www.visualmicro.com/</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>visual<sp/>micro<sp/>and<sp/>the<sp/>arduino<sp/>ide<sp/>ignore<sp/>this<sp/>code<sp/>during<sp/>compilation.<sp/>this<sp/>code<sp/>is<sp/>automatically<sp/>maintained<sp/>by<sp/>visualmicro,<sp/>manual<sp/>changes<sp/>to<sp/>this<sp/>file<sp/>will<sp/>be<sp/>overwritten</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>the<sp/>contents<sp/>of<sp/>the<sp/>Visual<sp/>Micro<sp/>sketch<sp/>sub<sp/>folder<sp/>can<sp/>be<sp/>deleted<sp/>prior<sp/>to<sp/>publishing<sp/>a<sp/>project</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>all<sp/>non-arduino<sp/>files<sp/>created<sp/>by<sp/>visual<sp/>micro<sp/>and<sp/>all<sp/>visual<sp/>studio<sp/>project<sp/>or<sp/>solution<sp/>files<sp/>can<sp/>be<sp/>freely<sp/>deleted<sp/>and<sp/>are<sp/>not<sp/>required<sp/>to<sp/>compile<sp/>a<sp/>sketch<sp/>(do<sp/>not<sp/>delete<sp/>your<sp/>own<sp/>code!).</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>note:<sp/>debugger<sp/>breakpoints<sp/>are<sp/>stored<sp/>in<sp/>&apos;.sln&apos;<sp/>or<sp/>&apos;.asln&apos;<sp/>files,<sp/>knowledge<sp/>of<sp/>last<sp/>uploaded<sp/>breakpoints<sp/>is<sp/>stored<sp/>in<sp/>the<sp/>upload.vmps.xml<sp/>file.<sp/>Both<sp/>files<sp/>are<sp/>required<sp/>to<sp/>continue<sp/>a<sp/>previous<sp/>debug<sp/>session<sp/>without<sp/>needing<sp/>to<sp/>compile<sp/>and<sp/>upload<sp/>again</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/><sp/><sp/><sp/>Hardware:<sp/>ATtiny25/45/85,<sp/>Platform=avr,<sp/>Package=ATTinyCore</highlight></codeline>
+<codeline lineno="9"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(_VMICRO_INTELLISENSE)</highlight></codeline>
+<codeline lineno="12"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>_VSARDUINO_H_</highlight></codeline>
+<codeline lineno="14"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>_VSARDUINO_H_</highlight></codeline>
+<codeline lineno="15"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>__AVR_ATtiny85__</highlight></codeline>
+<codeline lineno="16"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>__AVR_ATTINY85__</highlight></codeline>
+<codeline lineno="17"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>F_CPU<sp/>8000000L</highlight></codeline>
+<codeline lineno="18"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>ARDUINO<sp/>10807</highlight></codeline>
+<codeline lineno="19"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>ARDUINO_AVR_ATTINYX5</highlight></codeline>
+<codeline lineno="20"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>ARDUINO_ARCH_AVR</highlight></codeline>
+<codeline lineno="21"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>__cplusplus<sp/>201103L</highlight></codeline>
+<codeline lineno="22"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>__AVR__</highlight></codeline>
+<codeline lineno="23"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>__inline__</highlight></codeline>
+<codeline lineno="24"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>__asm__(...)</highlight></codeline>
+<codeline lineno="25"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>__extension__</highlight></codeline>
+<codeline lineno="26"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>__inline__</highlight></codeline>
+<codeline lineno="27"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>__volatile__</highlight></codeline>
+<codeline lineno="28"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>GCC_VERSION<sp/>40902</highlight></codeline>
+<codeline lineno="29"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>__cplusplus<sp/>201103L</highlight></codeline>
+<codeline lineno="30"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>volatile(va_arg)<sp/></highlight></codeline>
+<codeline lineno="32"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>_CONST</highlight></codeline>
+<codeline lineno="33"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>__builtin_va_start</highlight></codeline>
+<codeline lineno="34"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>__builtin_va_end</highlight></codeline>
+<codeline lineno="35"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>__attribute__(...)</highlight></codeline>
+<codeline lineno="36"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>NOINLINE<sp/>__attribute__((noinline))</highlight></codeline>
+<codeline lineno="37"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>prog_void</highlight></codeline>
+<codeline lineno="38"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>PGM_VOID_P<sp/>int</highlight></codeline>
+<codeline lineno="39"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__builtin_constant_p</highlight></codeline>
+<codeline lineno="42"><highlight class="preprocessor"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>__builtin_constant_p<sp/>__attribute__((__const__))</highlight></codeline>
+<codeline lineno="43"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="44"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#ifndef<sp/>__builtin_strlen</highlight></codeline>
+<codeline lineno="45"><highlight class="preprocessor"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>__builtin_strlen<sp/><sp/>__attribute__((__const__))</highlight></codeline>
+<codeline lineno="46"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="47"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NEW_H</highlight></codeline>
+<codeline lineno="50"><highlight class="preprocessor"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*__builtin_va_list;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="comment">//extern<sp/>&quot;C&quot;<sp/>void<sp/>__cxa_pure_virtual()<sp/>{;}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>div_t;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ldiv_t;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*__builtin_va_list;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="comment">//extern<sp/>&quot;C&quot;<sp/>void<sp/>__cxa_pure_virtual()<sp/>{;}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;arduino.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;pins_arduino.h&gt;</highlight><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="comment">//#undef<sp/>F</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="comment">//#define<sp/>F(string_literal)<sp/>((const<sp/>PROGMEM<sp/>char<sp/>*)(string_literal))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>PSTR</highlight></codeline>
+<codeline lineno="67"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>PSTR(string_literal)<sp/>((const<sp/>PROGMEM<sp/>char<sp/>*)(string_literal))</highlight></codeline>
+<codeline lineno="68"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="comment">//typedef<sp/>unsigned<sp/>char<sp/>uint8_t;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="comment">//typedef<sp/>unsigned<sp/>int<sp/>uint8_t;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>pgm_read_byte(address_short)<sp/>uint8_t()<sp/></highlight></codeline>
+<codeline lineno="73"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>pgm_read_word(address_short)<sp/>uint16_t()<sp/></highlight></codeline>
+<codeline lineno="74"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>pgm_read_dword(address_short)<sp/>uint32_t()</highlight></codeline>
+<codeline lineno="75"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>pgm_read_float(address_short)<sp/>float()</highlight></codeline>
+<codeline lineno="76"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>pgm_read_ptr(address_short)<sp/><sp/><sp/>short()</highlight></codeline>
+<codeline lineno="77"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Ultraviolet_Sense.ino&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="80"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="C:/LABS/Ultraviolet_Sense/Ultraviolet_Sense/__vm/.Ultraviolet_Sense.vsarduino.h"/>
+  </compounddef>
+</doxygen>

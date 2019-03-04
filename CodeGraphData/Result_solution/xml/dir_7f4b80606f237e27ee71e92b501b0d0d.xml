@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="dir_7f4b80606f237e27ee71e92b501b0d0d" kind="dir">
+    <compoundname>C:/LABS/Ultraviolet_Sense/Ultraviolet_Sense</compoundname>
+    <innerdir refid="dir_dd1f2e2f15830eca2b88f4e626b3c85d">C:/LABS/Ultraviolet_Sense/Ultraviolet_Sense/__vm</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/LABS/Ultraviolet_Sense/Ultraviolet_Sense/"/>
+  </compounddef>
+</doxygen>

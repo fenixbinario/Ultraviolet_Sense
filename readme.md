@@ -5,27 +5,65 @@ _Este sentido te permite tener una percepción de la catidad de rayos UV que con
 ## REQUISITOS
 
 ### Software
-* Tener instalado `ATTinyCore` by Spence Konde [Más INFO](https://github.com/SpenceKonde/ATTinyCore).
+* Instalar	Tarjeta:	------------------	by **Spence Konde**		[Más INFO](https://github.com/SpenceKonde/ATTinyCore).
+* Instalar	Librería:	------------------	by **Adafruit**			[Más INFO](https://github.com/adafruit/Adafruit_NeoPixel).
+* Instalar	Librería:	`<EasyNeoPixels.h>`	by **Evelyn Masso**		[Más INFO](https://github.com/outofambit/easy-neopixels).
 
 ### Hardware
-* Atiny85 | Attiny45.
-* Sensor UV.
+* Atiny85		* 1	Unidad.
+* GUVA-S12SD	* 1 Unidad.
+* WS2812		* 2 Unidades.
+* Led RGB		* 1 Unidad.
+* Motor			* 3 Unidades.
+* Diodo			* 3 Uidades.
+* 330 ohm		* 3 Unidades.
+* 33 uF			* 1 Unidad.
+* Power 5v		* 1 Unidad.
 
-## CODIGO
+### E/S
 
-### *Pasos*
-* Para desplegar y construir por ti mismo este órgano y sentido sigue **Desplequegar**.
-* Sigue cada unos de los pasos.
-* Que hardware necesitas?
 
-_Descripción del codigo de arduino_
+|	Attiny85	|		POWER		|		GUVA-S12SD		|		WS2812		|		Motor		|	
+|		----	|		----		|		----			|		----		|		----		|
+|	PB4			|		GND			|		GND	-			|		GND	-		|		GND	-		|
+|	PB8			|		VCC			|		5V	+			|		5V	+		|		5V	+		|
+|	PB3	ADC3	|		x			|		OUT				|		x			|		x			|
+|	PB1 PCNINT1	|		x			|		x				|		DATA		|		DATA		|
 
+
+
+
+
+## CÓDIGO
+_Comentarios sobre las funciones y sus conexiones._
+
+
+
+
+## DESPLIEGUE
+*PASOS*
+* Asegurese de que tienes todo el hardware, conexiones, alimentación, tarjeta y librerías. 
+* Monte en una tarjeta de desarrollo las conexiones o ensamble una PCB.
+* Ten cuidado lo la alimentación.
+* Añade un condensador electrolitico entre el PIN RESET y GND del programador.
+* Asegurate de tener configurado el DS3231 ¿Tienes el reloj con la hora ajustada?
+
+_Descomenta estas líneas para ajustarlo con la hora de tu pc._
 ``` c++
+.
+..
+..
 
-#include <TinyWireM>
-#include <Ultraviolet_Sense>
-
-Ultraviolet newSense;
-
+...
+..
+.
 ```
+
+
+
+
+## DATASHEET
+
+### ATtiny 25/45/85
+![x5 pin mapping](http://drazzy.com/e/img/PinoutT85a.jpg "Arduino Pin Mapping for ATtiny 85/45/25")
 

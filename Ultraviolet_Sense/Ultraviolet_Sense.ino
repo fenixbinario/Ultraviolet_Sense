@@ -1,24 +1,38 @@
 /*
+INFO:
 UV index explanation:	http://www2.epa.gov/sunwise/uv-index-scale
 UV index explanation:	http://www.epa.gov/sunwise/doc/what_is_uvindex.html
 RGB colours:			https://howtomechatronics.com/tutorials/arduino/how-to-use-a-rgb-led-with-arduino/
- Name:		Ultraviolet_Sense.ino
- Created:	27/02/2019 16:04:00
- Author:	@fenixbinario | www.fenixbinario.com
- Hardware: Attiny85 
 
-Connection:
+AUTOR:
+Name:		Ultraviolet_Sense.ino
+Created:	27/02/2019 16:04:00
+Author:	@fenixbinario | www.fenixbinario.com
+ 
+SOFTWARE:
+* Instalar	Tarjeta:	------------------	by **Spence Konde**		https://github.com/SpenceKonde/ATTinyCore.
+* Instalar	Librería:	------------------	by **Adafruit**			https://github.com/adafruit/Adafruit_NeoPixel.
+* Instalar	Librería:	`<EasyNeoPixels.h>`	by **Evelyn Masso**		https://github.com/outofambit/easy-neopixels.
 
-Arduino           Ultraviolet(UV) sensor
-A0(Analog 0)          SIG
-+ 5V                    VCC
-GND                    GND
+HARDWARE:
+* Atiny85		* 1	Unidad.
+* GUVA-S12SD	* 1 Unidad.
+* WS2812		* 2 Unidades.
+* Led RGB		* 1 Unidad.
+* Motor			* 3 Unidades.
+* Diodo			* 3 Uidades.
+* 330 ohm		* 3 Unidades.
+* 33 uF			* 1 Unidad.
+* Power 5v		* 1 Unidad.
 
-Attiny85
-PB7 ADC1 pin2 (Analog) SIG
-PB4 GND
-PB8 VCC
-PB0 Pin0 PWM
+CONNECTION:
+|	Attiny85	|		POWER		|		GUVA-S12SD		|		WS2812		|		Motor		|
+|		----	|		----		|		----			|		----		|		----		|
+|	PB4			|		GND			|		GND	-			|		GND	-		|		GND	-		|
+|	PB8			|		VCC			|		5V	+			|		5V	+		|		5V	+		|
+|	PB3	ADC3	|		x			|		OUT				|		x			|		x			|
+|	PB1 PCNINT1	|		x			|		x				|		DATA		|DATA->FlyBack Diode|
+
 
 */
 
@@ -132,14 +146,11 @@ void loop()
 
 
 
-void setColor(int redValue, int greenValue, int blueValue) {
-	
-	/*
-	analogWrite(redPin, redValue);
-	analogWrite(greenPin, greenValue);
-	analogWrite(bluePin, blueValue);
-	*/
+void setColor(int redValue, int greenValue, int blueValue)
+{
 	writeEasyNeoPixel(0, redValue, greenValue, blueValue);
+	delay(1000);
+	writeEasyNeoPixel(0, LOW);
 }
 
 void Colour(void)
