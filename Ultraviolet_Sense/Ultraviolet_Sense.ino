@@ -55,36 +55,91 @@ colours color;
 float Vsig = -1;
 int	Vibrator = -1;
 int UV_Analog = ADC1D;
-int PWM_Pin = PCINT0;
-/*
-int redPin = PCINT5;
-int greenPin = PCINT3;
-int bluePin = PCINT4;
-*/
-int time = 500;
+int DATA_Pin = PCINT0;
+int time = 1000;
 
 // Fuction Prototype
-void setColor(int, int, int);
-void Colour(void); // UV Index Scale Universal
-void Vibration(int); //void Vibration(int); // Motor Vibration
+void setUV(void);								// setup();
+void loopUV(void);								// loop();
+void setColor(int, int, int);					// ON Set Color on ws2812
+void Colour(bool);								// OFF
+void Colour(void);								// UV Index Scale Universal choose Colour
+void Vibration(int);							// ON void Vibration(int); // Motor Vibration
+void Vibration(bool);							// OFF
+void mathUV(void);								// Logic & Math
 
 void setup()
 {
-	// Pixel RGB
-	setupEasyNeoPixels(PCINT3, 1);
-
-	//Pin OUT
-	pinMode(UV_Analog, INPUT);
-	pinMode(PWM_Pin, OUTPUT);
-
-	/*
-	PinMode(redPin, OUTPUT);
-	pinMode(greenPin, OUTPUT);
-	pinMode(bluePin, OUTPUT);
-	*/
+	setUV();
 }
 
 void loop()
+{
+	loop();
+}
+
+void setUV(void)
+{
+	// Pixel RGB & Motor Vibration
+	setupEasyNeoPixels(DATA_Pin, 2);
+
+	// Pin Analog IN
+	pinMode(UV_Analog, INPUT);
+
+}
+
+void loopUV(void)
+{
+	mathUV();
+	Colour();
+	Vibration(Vibrator);
+	delay(time);
+	Colour(LOW);
+	Vibration(LOW);
+	delay(time/4);
+}
+
+
+void setColor(int redValue, int greenValue, int blueValue)
+{
+	writeEasyNeoPixel(0, redValue, greenValue, blueValue);
+}
+
+void Colour(bool _LOW)
+{
+	writeEasyNeoPixel(0, _LOW);
+}
+
+void Colour(void)
+{
+	switch (color)
+	{
+	case green:		setColor(0, 255, 0); // Green Color
+		break;
+	case yellow:	setColor(255, 255, 0); // Red Yellow
+		break;
+	case orange:	setColor(255, 170, 0); // Red Orange
+		break;
+	case red:		setColor(255, 0, 0); // Red Color
+		break;
+	case purple:	setColor(170, 0, 255); // Purple Color
+		break;
+	default:
+		break;
+	}
+}
+
+void Vibration(int _pwm)
+{
+	writeEasyNeoPixel(1, _pwm, _pwm, _pwm);
+}
+
+void Vibration(bool _LOW)
+{
+	writeEasyNeoPixel(1, _LOW);
+}
+
+void mathUV(void)
 {
 	int sensorValue;
 	long  sum = 0;
@@ -94,17 +149,16 @@ void loop()
 		sum = sensorValue + sum;
 		delay(0);
 	}
-	digitalWrite(PWM_Pin, LOW);
 	sum = sum >> 10;
 	Vsig = sum * 4980.0 / 1023.0; // Vsig is the value of voltage measured from the SIG pin of the Grove interface
 	Vibrator = map(int(Vsig), 0, 1200, 0, 255);
 
-	if (Vsig < 50) 
+	if (Vsig < 50)
 	{
 		color = none;
 	}
 	if (Vsig > 50 && Vsig < 227) // UV Index 1 | Exposure level - LOW  green
-	{	
+	{
 		color = green;
 	}
 	if (Vsig > 227 && Vsig < 318) { // UV Index: 2  Exposure level - LOW    green
@@ -139,42 +193,6 @@ void loop()
 		color = purple;;
 	}
 	if (Vsig > 1170) {	//	UV Index: 11+    Exposure level - EXTREME   purple
-		color = purple;	
+		color = purple;
 	}
-	Vibration(Vibrator);
-}
-
-
-
-void setColor(int redValue, int greenValue, int blueValue)
-{
-	writeEasyNeoPixel(0, redValue, greenValue, blueValue);
-	delay(1000);
-	writeEasyNeoPixel(0, LOW);
-}
-
-void Colour(void)
-{
-	switch (color)
-	{
-	case green:		setColor(0, 255, 0); // Green Color
-		break;
-	case yellow:	setColor(255, 255, 0); // Red Yellow
-		break;
-	case orange:	setColor(255, 170, 0); // Red Orange
-		break;
-	case red:		setColor(255, 0, 0); // Red Color
-		break;
-	case purple:	setColor(170, 0, 255); // Purple Color
-		break;
-	default:
-		break;
-	}
-}
-
-void Vibration(	int _pwm)
-{
-	digitalWrite(PWM_Pin, _pwm);
-	Colour();
-	delay(time);
 }
