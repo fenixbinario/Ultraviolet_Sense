@@ -95,7 +95,7 @@ void loop()
 }
 ```
 
-### `setColor()` ON - Envía instrucción de encendido con el código de color al led RGB
+### `setColor()` Código de color al led RGB (segun la tabla Indice de UV)
 
 ``` c++
 //Prototipo
@@ -111,14 +111,49 @@ void setColor(int redValue, int greenValue, int blueValue)
 setColor();
 ```
 
-### `Colour()` Lectura estado del color (segun la tabla Indice de UV)
+### `Colour()`		ON - Envía instrucción de encendido con al led RGB
 ``` c++
-void Colour(void);	
+//Prototipo
+void Colour(void);
+
+//Definicion
+void Colour(void)
+{
+	switch (color)
+	{
+	case green:		setColor(0, 255, 0); // Green Color
+		break;
+	case yellow:	setColor(255, 255, 0); // Red Yellow
+		break;
+	case orange:	setColor(255, 170, 0); // Red Orange
+		break;
+	case red:		setColor(255, 0, 0); // Red Color
+		break;
+	case purple:	setColor(170, 0, 255); // Purple Color
+		break;
+	default:
+		break;
+	}
+}
+
+//Invocar funcion
+Colour();
+
 ```
 
-### `Colour(LOW)` OFF- Envía instrucción de apagado al led RGB
+### `Colour(LOW)`	OFF - Envía instrucción de apagado al led RGB
 ``` c++
+//Prototipo
 void Colour(bool);
+
+//Definicion
+void Colour(bool _LOW)
+{
+	writeEasyNeoPixel(0, _LOW);
+}
+
+//Invocar funcion
+Colour();
 ```
 
 
@@ -126,6 +161,14 @@ void Vibration(int);							// ON void Vibration(int); // Motor Vibration
 void Vibration(bool);							// OFF
 void mathUV(void);								// Logic & Maths
 
+``` c++
+//Prototipo
+
+//Definicion
+
+//Invocar funcion
+
+```
 
 
 ## DESPLIEGUE
