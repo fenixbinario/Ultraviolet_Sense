@@ -39,6 +39,7 @@ _Comentarios sobre las funciones y sus conexiones._
 
 ### Variables Globales
 
+*	``` c++ enum  colours : int{	green = 0,	yellow = 1,	orange = 2,	red = 3,	purple = 4,	none = 5}; ``` _Indicador LED `flag`_
 *	`float Vsig = -1;`			_Señal del el sensor UV._
 *	`int	Vibrator = -1;`		_Pulso modulado de **0 a 255** que se envía al motor._
 *	`int UV_Analog = ADC3D;`	_Lectura en bruto se la señal del sensor UV._
