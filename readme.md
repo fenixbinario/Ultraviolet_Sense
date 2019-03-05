@@ -39,11 +39,11 @@ _Comentarios sobre las funciones y sus conexiones._
 
 ### Variables Globales
 
-`float Vsig = -1;`			_Señal del el sensor UV._
-`int	Vibrator = -1;`		_Pulso modulado de **0 a 255** que se envía al motor._
-`int UV_Analog = ADC1D;`	_Lectura en bruto se la señal del sensor UV._
-`int DATA_Pin = PCINT0;`	_Salida a **WS2812** que comunica al **LED RGB** y a los **3 Motores**._
-`int time = 1000;`			_Tiempo en milisegundos que se va a matener activos el Led y los motores._ 
+*	`float Vsig = -1;`			_Señal del el sensor UV._
+*	`int	Vibrator = -1;`		_Pulso modulado de **0 a 255** que se envía al motor._
+*	`int UV_Analog = ADC1D;`	_Lectura en bruto se la señal del sensor UV._
+*	`int DATA_Pin = PCINT0;`	_Salida a **WS2812** que comunica al **LED RGB** y a los **3 Motores**._
+*	`int time = 1000;`			_Tiempo en milisegundos que se va a matener activos el Led y los motores._ 
 
 
 
