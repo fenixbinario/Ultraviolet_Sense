@@ -69,7 +69,7 @@ void setup()
 	setUV();
 }
 
-```` 
+```
 
 ### `loopUV()` Bucle de lectura del sensor
 ``` c+++
@@ -97,7 +97,7 @@ void loop()
 
 ### `setColor()` ON - Envía instrucción de encendido con el código de color al led RGB
 
-```c++
+``` c++
 //Prototipo
 void setColor(int, int, int);
 
