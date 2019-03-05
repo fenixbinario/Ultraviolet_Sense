@@ -39,7 +39,7 @@ _Comentarios sobre las funciones y sus conexiones._
 
 ### Variables Globales
 
-*	``` c++ enum  colours : int{	green = 0,	yellow = 1,	orange = 2,	red = 3,	purple = 4,	none = 5}; ``` _Indicador LED `flag`_
+*	`enum  colours : int{	green = 0,	yellow = 1,	orange = 2,	red = 3,	purple = 4,	none = 5};` _Indicador LED `color`_
 *	`float Vsig = -1;`			_Señal del el sensor UV._
 *	`int	Vibrator = -1;`		_Pulso modulado de **0 a 255** que se envía al motor._
 *	`int UV_Analog = ADC3D;`	_Lectura en bruto se la señal del sensor UV._
@@ -94,10 +94,34 @@ void loop()
 	loop();
 }
 ```
-void loopUV(void);								// loop();
-void setColor(int, int, int);					// ON Set Color on ws2812
-void Colour(bool);								// OFF
-void Colour(void);								// UV Index Scale Universal choose Colour
+
+### `setColor()` ON - Envía instrucción de encendido con el código de color al led RGB
+
+```c++
+//Prototipo
+void setColor(int, int, int);
+
+//Definicion
+void setColor(int redValue, int greenValue, int blueValue)
+{
+	writeEasyNeoPixel(0, redValue, greenValue, blueValue);
+}
+
+//Invocar funcion
+setColor();
+```
+
+### `Colour()` Lectura estado del color (segun la tabla Indice de UV)
+``` c++
+void Colour(void);	
+```
+
+### `Colour(LOW)` OFF- Envía instrucción de apagado al led RGB
+``` c++
+void Colour(bool);
+```
+
+
 void Vibration(int);							// ON void Vibration(int); // Motor Vibration
 void Vibration(bool);							// OFF
 void mathUV(void);								// Logic & Maths
