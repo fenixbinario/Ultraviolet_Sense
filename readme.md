@@ -72,7 +72,7 @@ void setup()
 ```
 
 ### `loopUV()` Bucle de lectura del sensor
-``` c+++
+``` c++
 //Prototipo
 void loopUV(void):
 
@@ -156,18 +156,44 @@ void Colour(bool _LOW)
 Colour();
 ```
 
-
-void Vibration(int);							// ON void Vibration(int); // Motor Vibration
-void Vibration(bool);							// OFF
-void mathUV(void);								// Logic & Maths
-
+### `Vibration();` ON - Envía instrucción de encedido al Motor
 ``` c++
 //Prototipo
+void Vibration(int);
 
 //Definicion
+void Vibration(int _pwm)
+{
+	writeEasyNeoPixel(1, _pwm, _pwm, _pwm);
+}
 
 //Invocar funcion
+Vibration();
+```
 
+### `Vibration(LOW);` OFF - Envía instrucción de apagado al Motor
+``` c++
+//Prototipo
+void Vibration(bool);
+
+//Definicion
+void Vibration(bool _LOW)
+{
+	writeEasyNeoPixel(1, _LOW);
+}
+
+//Invocar funcion
+Vibration();
+```
+
+### `mathUV()` Lógica y Matemáticas - Lectura del Sensor y envio de datos
+``` c++
+//Prototipo
+void mathUV(void);
+
+
+//Invocar funcion
+mathUV();
 ```
 
 
@@ -177,20 +203,6 @@ void mathUV(void);								// Logic & Maths
 * Monte en una tarjeta de desarrollo las conexiones o ensamble una PCB.
 * Ten cuidado lo la alimentación.
 * Añade un condensador electrolitico entre el PIN RESET y GND del programador.
-* Asegurate de tener configurado el DS3231 ¿Tienes el reloj con la hora ajustada?
-
-_Descomenta estas líneas para ajustarlo con la hora de tu pc._
-``` c++
-.
-..
-..
-
-...
-..
-.
-```
-
-
 
 
 ## DATASHEET
