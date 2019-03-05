@@ -140,7 +140,7 @@ void Colour(void)
 Colour();
 ```
 
-### `Colour(LOW)`	OFF - Envía instrucción de apagado al led RGB
+### `Colour(bool)`	OFF - Envía instrucción de apagado al led RGB
 ``` c++
 //Prototipo
 void Colour(bool);
@@ -152,10 +152,10 @@ void Colour(bool _LOW)
 }
 
 //Invocar funcion
-Colour();
+Colour(LOW);
 ```
 
-### `Vibration();` ON - Envía instrucción de encedido al Motor
+### `Vibration()` ON - Envía instrucción de encedido al Motor
 ``` c++
 //Prototipo
 void Vibration(int);
@@ -170,7 +170,7 @@ void Vibration(int _pwm)
 Vibration();
 ```
 
-### `Vibration(LOW);` OFF - Envía instrucción de apagado al Motor
+### `Vibration(bool)` OFF - Envía instrucción de apagado al Motor
 ``` c++
 //Prototipo
 void Vibration(bool);
@@ -182,7 +182,7 @@ void Vibration(bool _LOW)
 }
 
 //Invocar funcion
-Vibration();
+Vibration(LOW);
 ```
 
 ### `mathUV()` Lógica y Matemáticas - Lectura del Sensor y envio de datos
