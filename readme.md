@@ -4,12 +4,12 @@ _Este sentido te permite tener una percepción de la catidad de rayos UV que con
 
 ## REQUISITOS
 
-### Software
+### `Software`
 * Instalar	Tarjeta:	------------------	by **Spence Konde**		[Más INFO](https://github.com/SpenceKonde/ATTinyCore).
 * Instalar	Librería:	------------------	by **Adafruit**			[Más INFO](https://github.com/adafruit/Adafruit_NeoPixel).
 * Instalar	Librería:	`<EasyNeoPixels.h>`	by **Evelyn Masso**		[Más INFO](https://github.com/outofambit/easy-neopixels).
 
-### Hardware
+### `Hardware`
 * Atiny85		* 1	Unidad.
 * GUVA-S12SD	* 1 Unidad.
 * WS2812		* 2 Unidades.
@@ -20,7 +20,7 @@ _Este sentido te permite tener una percepción de la catidad de rayos UV que con
 * 33 uF			* 1 Unidad.
 * Power 5v		* 1 Unidad.
 
-### E/S
+### `E/S`
 
 
 |	Attiny85	|		POWER		|		GUVA-S12SD		|		WS2812		|		Motor		|	
