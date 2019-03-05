@@ -41,9 +41,65 @@ _Comentarios sobre las funciones y sus conexiones._
 
 *	`float Vsig = -1;`			_Señal del el sensor UV._
 *	`int	Vibrator = -1;`		_Pulso modulado de **0 a 255** que se envía al motor._
-*	`int UV_Analog = ADC1D;`	_Lectura en bruto se la señal del sensor UV._
-*	`int DATA_Pin = PCINT0;`	_Salida a **WS2812** que comunica al **LED RGB** y a los **3 Motores**._
+*	`int UV_Analog = ADC3D;`	_Lectura en bruto se la señal del sensor UV._
+*	`int DATA_Pin = PCINT1;`	_Salida a **WS2812** que comunica al **LED RGB** y a los **3 Motores**._
 *	`int time = 1000;`			_Tiempo en milisegundos que se va a matener activos el Led y los motores._ 
+
+
+### `setUp()` Inicializa pines de entradas y salidas
+``` c++
+//Prototipo
+void setUV(void);
+
+//Definicion
+void setUV(void)
+{
+	// Pixel RGB & Motor Vibration
+	setupEasyNeoPixels(DATA_Pin, 2);
+
+	// Pin Analog IN
+	pinMode(UV_Analog, INPUT);
+
+}
+
+//Invocar función
+void setup()
+{
+	setUV();
+}
+
+```` 
+
+### `loopUV()` Bucle de lectura del sensor
+``` c+++
+//Prototipo
+void loopUV(void):
+
+//Definicion
+void loopUV(void)
+{
+	mathUV();
+	Colour();
+	Vibration(Vibrator);
+	delay(time);
+	Colour(LOW);
+	Vibration(LOW);
+	delay(time/4);
+}
+
+//Invocar funcion
+void loop()
+{
+	loop();
+}
+```
+void loopUV(void);								// loop();
+void setColor(int, int, int);					// ON Set Color on ws2812
+void Colour(bool);								// OFF
+void Colour(void);								// UV Index Scale Universal choose Colour
+void Vibration(int);							// ON void Vibration(int); // Motor Vibration
+void Vibration(bool);							// OFF
+void mathUV(void);								// Logic & Maths
 
 
 

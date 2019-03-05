@@ -54,8 +54,8 @@ colours color;
 // Global 
 float Vsig = -1;
 int	Vibrator = -1;
-int UV_Analog = ADC1D;
-int DATA_Pin = PCINT0;
+int UV_Analog = ADC3D;
+int DATA_Pin = PCINT1;
 int time = 1000;
 
 // Fuction Prototype
