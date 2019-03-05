@@ -28,7 +28,7 @@ _Este sentido te permite tener una percepción de la catidad de rayos UV que con
 |	PB4			|		GND			|		GND	-			|		GND	-		|		GND	-		|
 |	PB8			|		VCC			|		5V	+			|		5V	+		|		5V	+		|
 |	PB3	ADC3	|		x			|		OUT				|		x			|		x			|
-|	PB1 PCNINT1	|		x			|		x				|		DATA		|		DATA		|
+|	PB1 PCNINT1	|		x			|		x				|		DATA		|DATA->FlyBack Diode|
 
 
 
