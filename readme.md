@@ -111,7 +111,7 @@ void setColor(int redValue, int greenValue, int blueValue)
 setColor();
 ```
 
-### `Colour()`		ON - Envía instrucción de encendido con al led RGB
+### `Colour()`		ON - Envía instrucción de encendido al led RGB
 ``` c++
 //Prototipo
 void Colour(void);
@@ -138,7 +138,6 @@ void Colour(void)
 
 //Invocar funcion
 Colour();
-
 ```
 
 ### `Colour(LOW)`	OFF - Envía instrucción de apagado al led RGB
