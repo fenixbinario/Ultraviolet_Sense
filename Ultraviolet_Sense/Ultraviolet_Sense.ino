@@ -66,7 +66,7 @@ void Colour(bool);								// OFF
 void Colour(void);								// UV Index Scale Universal choose Colour
 void Vibration(int);							// ON void Vibration(int); // Motor Vibration
 void Vibration(bool);							// OFF
-void mathUV(void);								// Logic & Math
+void mathUV(void);								// Logic & Maths
 
 void setup()
 {
